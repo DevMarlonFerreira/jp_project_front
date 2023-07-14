@@ -6,14 +6,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
+import { DashboardRoutingModule } from './dashboard-routing.module';
+import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [DashboardComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule,
+    DashboardRoutingModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
@@ -21,4 +21,4 @@ import { HomeComponent } from './home.component';
     MatListModule,
   ],
 })
-export class HomeModule {}
+export class DashboardModule {}

@@ -1,0 +1,33 @@
+<form>
+  <h5>
+    <u><i>Cadastro de Influencer</i></u>
+  </h5>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput placeholder="Nome" name="name" [(ngModel)]="name" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Email" name="email" [(ngModel)]="email" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Senha</mat-label>
+    <input
+      matInput
+      placeholder="Senha"
+      value=""
+      name="password"
+      type="password"
+      [(ngModel)]="password"
+    />
+  </mat-form-field>
+
+  <div>
+    <button mat-raised-button color="primary" (click)="submit()">
+      Cadastrar
+    </button>
+  </div>
+  <span *ngIf="show">
+    <button mat-button color="accent">Login success !!</button></span
+  >
+</form>

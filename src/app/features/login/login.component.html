@@ -1,0 +1,31 @@
+<form>
+  <h5>
+    <u><i>Login Influencer</i></u>
+  </h5>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Email" name="usename" [(ngModel)]="email" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Senha</mat-label>
+    <input
+      matInput
+      placeholder="Senha"
+      value=""
+      name="password"
+      type="password"
+      [(ngModel)]="password"
+    />
+  </mat-form-field>
+
+  <div>
+    <button mat-raised-button color="primary" (click)="submit()">Entrar</button>
+
+    <button mat-raised-button color="primary" (click)="signup()">
+      Criar conta
+    </button>
+  </div>
+  <span *ngIf="show">
+    <button mat-button color="accent">Login success !!</button></span
+  >
+</form>
