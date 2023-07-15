@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../core/services/login.service';
+import { AuthService } from '../../core/services/auth.service';
+import { Auth } from '../../core/models/auth.model';
 
 import { CommonModule } from '@angular/common';
 
@@ -16,7 +18,11 @@ export class LoginComponent {
   password: string = '';
   show: boolean = false;
 
-  constructor(private router: Router, private loginService: LoginService) {}
+  constructor(
+    private router: Router,
+    private loginService: LoginService,
+    private authService: AuthService
+  ) {}
 
   submit() {
     const data = {
@@ -26,9 +32,9 @@ export class LoginComponent {
 
     this.loginService.execute(data).subscribe((res) => {
       this.show = true;
-      console.log(res)
+      this.authService.login(res as Auth);
       // setTimeout(() => {
-        this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard']);
       // }, 3000);
     });
     // this.clear();
@@ -39,7 +45,7 @@ export class LoginComponent {
     this.show = true;
   }
 
-  signup(){
+  signup() {
     this.router.navigate(['/signup']);
   }
 }
